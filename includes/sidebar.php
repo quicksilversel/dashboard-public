@@ -30,7 +30,7 @@
 				</li>
 				<li>
 					<a href="status.php" class="<?php if ($CURRENT_PAGE == "status") {?>current-page<?php }?>">
-						<i class="fa fa-tasks"></i>
+						<i class="fas fa-tasks"></i>
 						<span>Tasks</span>
 						<!-- count number of incomplete tasks -->
 						<span class="badge badge-pill badge-danger">

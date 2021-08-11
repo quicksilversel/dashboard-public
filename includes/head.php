@@ -9,6 +9,7 @@
 <!-- js -->
 <script type="text/javascript" src="scripts/jquery-3.5.1.min.js"></script>    
 <script type="text/javascript" src="scripts/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!-- css -->
 <link href="style.css" type="text/css", rel="stylesheet">
 <!-- font awesome -->

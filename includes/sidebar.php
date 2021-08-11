@@ -29,19 +29,19 @@
 					</a>
 				</li>
 				<li>
-					<a href="#" class="<?php /* if ($CURRENT_PAGE == "") {?>current-page<?php } */ ?>">
-						<i class="fas fa-chart-line"></i>
-						<span>Analytics</span>
-					</a>
-				</li>
-				<li>
 					<a href="status.php" class="<?php if ($CURRENT_PAGE == "status") {?>current-page<?php }?>">
-						<i class="fa fa-calendar"></i>
+						<i class="fa fa-tasks"></i>
 						<span>Tasks</span>
 						<!-- count number of incomplete tasks -->
 						<span class="badge badge-pill badge-danger">
 							<?php echo ($task_count - $task_complete) ?>
 						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#" class="<?php /* if ($CURRENT_PAGE == "") {?>current-page<?php } */ ?>">
+						<i class="fas fa-chart-line"></i>
+						<span>Analytics</span>
 					</a>
 				</li>
 				<li>

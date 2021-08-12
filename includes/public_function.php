@@ -21,6 +21,26 @@ function getTask() {
 	return $final_tasks;
 }
 
+// sort table by column
+function sortTable($column, $sort_order) {
+	global $conn, $asc_or_desc;
+	$sql = 'SELECT * FROM task ORDER BY ' . $column . ' ' . $sort_order;
+	if(mysqli_query($conn, $sql)){
+		$asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
+		$result = mysqli_query($conn, $sql);
+		$tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+		$final_tasks = array();
+		foreach ($tasks as $task) {
+			array_push($final_tasks, $task);
+		}
+		return $final_tasks;
+	}
+	else{
+		echo mysqli_error($conn);
+	}
+}
+
 /* actions */
 
 // mark incomplete

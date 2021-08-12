@@ -79,7 +79,6 @@ body {
     padding: 16px;
     display: flex;
     align-items: flex-start;
-
 }
 
 .message-box img {
@@ -93,13 +92,6 @@ body {
 
 .message-content {
     padding-left: 16px;
-    width: 100%;
-}
-
-.message-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
 }
 
@@ -150,24 +142,26 @@ table {
 table th {
 	border-top: none;
 	border-bottom: 1px solid transparent;
-}
-
-th {
-	background-color: var(--divider);
+    background-color: var(--divider);
 	font-weight: normal;
 }
 
-td {
+table td {
   	border-bottom: 1px solid var(--divider);
 }
 
-table td a {
+table a {
   color: var(--primary-text);
 }
 
 table td a:hover {
 	color: var(--primary-text);
 	text-decoration: underline;
+}
+
+table th a:hover {
+    color: var(--primary-text);
+    text-decoration: none;
 }
 
 /* date column */

@@ -1,6 +1,19 @@
 <?php include("includes/config.php");?>
 <?php require_once("includes/public_function.php");?>
-<?php $tasks = getTask(); ?>
+<?php 
+
+// Get the sort order for the column, ascending or descending, default is ascending.
+$sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
+$up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order); 
+
+if (isset($_GET['column'])){
+    $column = $_GET['column'];
+    $tasks = sortTable($column, $sort_order);
+}
+else{
+    $tasks = sortTable('id', 'ASC'); 
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +39,13 @@
 				<table class="text-center">
 					<tbody>
 						<tr>
-							<th style="width: 5%; border-top:none;">#</th>
-							<th style="width: 35%; border-top:none;">Task</th>
-							<th style="width: 30%; border-top:none;">Status</th>
-							<th style="width: 30%; border-top:none;">Due</th>
+							<th style="width: 5%; border-top:none;"><a href="status.php?column=id">#<i class="fas fa-sort px-1"></i></th>
+							<th style="width: 35%; border-top:none;"><a href="status.php?column=taskName&order=<?php echo $asc_or_desc; ?>">Task
+                            <i class="fas fa-caret-<?php echo $up_or_down ?> px-1"></i></th>
+							<th style="width: 30%; border-top:none;"><a href="status.php?column=taskStatus&order=<?php echo $asc_or_desc; ?>">Status
+                            <i class="fas fa-caret-<?php echo $up_or_down ?> px-1"></i></th>
+							<th style="width: 30%; border-top:none;"><a href="status.php?column=taskDue&order=<?php echo $asc_or_desc; ?>">Due
+                            <i class="fas fa-caret-<?php echo $up_or_down ?> px-1"></i></th>
 						</tr>
                         <!-- get data -->
                         <?php foreach ($tasks as $task): ?>
